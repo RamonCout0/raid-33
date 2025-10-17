@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cao3sij17x4qy"]
+
+[ext_resource type="Texture2D" uid="uid://dlgo17efsj4l0" path="res://assets/boss_bar_icon.png" id="1_em14d"]
+[ext_resource type="Script" uid="uid://co4kbuajboyb" path="res://custom_boss_hud.gd" id="1_q4xjg"]
+[ext_resource type="Texture2D" uid="uid://yro005pb14t2" path="res://low.png" id="3_dgx8u"]
+[ext_resource type="Texture2D" uid="uid://bwcpmxl2ikw1i" path="res://high.png" id="4_04hu5"]
+
+[node name="CustomBossHUD" type="CanvasLayer" node_paths=PackedStringArray("bar_count_label", "segment_progress_bar")]
+script = ExtResource("1_q4xjg")
+bar_count_label = NodePath("BarIcon/BarCountLabel")
+segment_progress_bar = NodePath("SegmentProgressBar")
+
+[node name="BarIcon" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 133.0
+offset_top = -13.0
+offset_right = 205.0
+offset_bottom = 10.0
+scale = Vector2(5.278491, 2.3400447)
+texture = ExtResource("1_em14d")
+
+[node name="BarCountLabel" type="Label" parent="BarIcon"]
+layout_mode = 0
+offset_left = 73.12696
+offset_top = 8.119503
+offset_right = 101.12696
+offset_bottom = 31.119503
+scale = Vector2(0.16836303, 0.29618183)
+horizontal_alignment = 1
+
+[node name="SegmentProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 144.0
+offset_top = 7.0
+offset_right = 160.0
+offset_bottom = 30.0
+scale = Vector2(22.479998, 0.88000107)
+value = 100.0
+texture_under = ExtResource("3_dgx8u")
+texture_progress = ExtResource("4_04hu5")

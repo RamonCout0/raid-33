@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3kotjm4im3bg"]
+
+[ext_resource type="Script" uid="uid://b1seonysc0osg" path="res://boss.gd" id="1_4jvlg"]
+[ext_resource type="Texture2D" uid="uid://y1fcaugo8nb0" path="res://assets/boss.png" id="1_dtosr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jvlg"]
+radius = 52.086468
+
+[node name="Boss" type="CharacterBody2D" groups=["boss"]]
+collision_layer = 2
+script = ExtResource("1_4jvlg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_dtosr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_4jvlg")

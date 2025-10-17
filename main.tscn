@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctf12lmm18vud"]
+
+[ext_resource type="Script" uid="uid://bw2e1qsdsey4w" path="res://game_manager.gd" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://c2ichgnlpy1x5" path="res://assets/tile.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cysj2py35yvas" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://qi6hinlull7b" path="res://ui.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c3kotjm4im3bg" path="res://Boss.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cao3sij17x4qy" path="res://custom_boss_hud.tscn" id="6_7mycd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(638, 51)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_7mycd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(321, 333.5)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(321.50003, 335)
+scale = Vector2(39.812504, 3.2500005)
+texture = ExtResource("1_ig7tw")
+
+[node name="player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(63, 215)
+
+[node name="Boss" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(570, 236)
+
+[node name="CustomBossHUD" parent="." instance=ExtResource("6_7mycd")]
+
+[node name="Control" parent="." instance=ExtResource("3_h2yge")]
+offset_left = 45.0
+offset_top = 54.0
+offset_right = 45.0
+offset_bottom = 54.0
