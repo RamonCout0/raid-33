@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0gajcrykld8b"]
+
+[ext_resource type="Script" uid="uid://cu1dyqgw5m4ch" path="res://Scenes/ui/timer.gd" id="1_38p7c"]
+[ext_resource type="Texture2D" uid="uid://cjknx0177eoev" path="res://assets/ui/time.png" id="2_38p7c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_38p7c"]
+font_color = Color(0.8074553, 0, 0.047793105, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p2jn4"]
+font_size = 11
+
+[node name="Timer" type="CanvasLayer"]
+script = ExtResource("1_38p7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(56, 43)
+scale = Vector2(0.9765625, 0.9414062)
+texture = ExtResource("2_38p7c")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 33.0
+offset_right = 77.0
+offset_bottom = 56.0
+text = "19:30"
+label_settings = SubResource("LabelSettings_38p7c")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1200.0
+one_shot = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 17.0
+offset_top = 68.0
+offset_right = 100.0
+offset_bottom = 91.0
+text = "Até a fúria total"
+label_settings = SubResource("LabelSettings_p2jn4")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

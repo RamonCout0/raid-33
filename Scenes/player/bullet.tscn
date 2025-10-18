@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://bk2c1a0m4b7ly"]
+
+[ext_resource type="Script" uid="uid://b573wv7lycv2q" path="res://Scripts/player/bullet.gd" id="1_ia4w3"]
+[ext_resource type="Texture2D" uid="uid://dw3ah7gk5m7qe" path="res://assets/player/tiro ult.png" id="2_ia4w3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucrg8"]
+atlas = ExtResource("2_ia4w3")
+region = Rect2(0, 0, 41, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tui1"]
+atlas = ExtResource("2_ia4w3")
+region = Rect2(41, 0, 41, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mirgv"]
+atlas = ExtResource("2_ia4w3")
+region = Rect2(82, 0, 41, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxbj2"]
+atlas = ExtResource("2_ia4w3")
+region = Rect2(123, 0, 41, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03iig"]
+atlas = ExtResource("2_ia4w3")
+region = Rect2(164, 0, 41, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5fkj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucrg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tui1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mirgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxbj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03iig")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
+size = Vector2(4, 3)
+
+[node name="bullet" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ia4w3")
+
+[node name="power" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4, 3)
+sprite_frames = SubResource("SpriteFrames_5fkj4")
+autoplay = "default"
+frame_progress = 0.2918988
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 3)
+shape = SubResource("RectangleShape2D_v8qja")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -1)
+rect = Rect2(2, 2, 4, 4)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

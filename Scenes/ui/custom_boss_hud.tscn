@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://cao3sij17x4qy"]
+
+[ext_resource type="Script" uid="uid://co4kbuajboyb" path="res://Scripts/ui/custom_boss_hud.gd" id="1_q4xjg"]
+[ext_resource type="Texture2D" uid="uid://d2yivrhh2tu87" path="res://assets/Barra_boss.png" id="2_dgx8u"]
+[ext_resource type="Texture2D" uid="uid://c1tpnu58tpt2s" path="res://assets/ui/barra1.png" id="2_lscqh"]
+[ext_resource type="Texture2D" uid="uid://dmohxeldjspx1" path="res://assets/ui/barra2.png" id="3_5lmjr"]
+[ext_resource type="Texture2D" uid="uid://c4r4dyby15pcl" path="res://assets/ui/barra3.png" id="4_uvlla"]
+[ext_resource type="Texture2D" uid="uid://coiyxjmoshqg6" path="res://assets/ui/barra4.png" id="5_x7ytm"]
+[ext_resource type="Texture2D" uid="uid://ba1vlxkkbl67u" path="res://assets/ui/barra5.png" id="6_cgi5l"]
+[ext_resource type="Texture2D" uid="uid://des6eio42xi2" path="res://assets/ui/barra 0.png" id="7_84eoi"]
+[ext_resource type="Texture2D" uid="uid://1trho2j4a48f" path="res://assets/ui/barravazia.png" id="9_vdxj0"]
+
+[node name="CustomBossHUD" type="CanvasLayer" node_paths=PackedStringArray("bar_count_label", "segment_progress_bar")]
+script = ExtResource("1_q4xjg")
+bar_count_label = NodePath("BarIcon/BarCountLabel")
+segment_progress_bar = NodePath("BarIcon/SegmentProgressBar")
+cycle_textures = Array[Texture2D]([ExtResource("2_lscqh"), ExtResource("3_5lmjr"), ExtResource("4_uvlla"), ExtResource("5_x7ytm"), ExtResource("6_cgi5l")])
+final_textures = Array[Texture2D]([ExtResource("7_84eoi")])
+
+[node name="BarIcon" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 65.0
+offset_top = 1.0
+offset_right = 575.0
+offset_bottom = 58.0
+size_flags_horizontal = 4
+texture = ExtResource("2_dgx8u")
+
+[node name="SegmentProgressBar" type="TextureProgressBar" parent="BarIcon"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -0.5
+offset_right = -190.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(23.115736, 1.058152)
+value = 100.0
+texture_under = ExtResource("9_vdxj0")
+
+[node name="BarCountLabel" type="Label" parent="BarIcon"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 26.0
+offset_right = 437.0
+offset_bottom = 49.0
+scale = Vector2(1.0443208, 0.8095994)
+horizontal_alignment = 1
