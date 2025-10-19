@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctf12lmm18vud"]
+[gd_scene load_steps=11 format=3 uid="uid://ctf12lmm18vud"]
 
 [ext_resource type="Script" uid="uid://bw2e1qsdsey4w" path="res://Scripts/gm/game_manager.gd" id="1_vafro"]
 [ext_resource type="Texture2D" uid="uid://c2ichgnlpy1x5" path="res://assets/teste/tile.png" id="2_4je8o"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c3kotjm4im3bg" path="res://Scenes/boss/ApDevil/Boss.tscn" id="4_8gwo8"]
 [ext_resource type="PackedScene" uid="uid://cao3sij17x4qy" path="res://Scenes/ui/custom_boss_hud.tscn" id="5_b8jcs"]
 [ext_resource type="PackedScene" uid="uid://qi6hinlull7b" path="res://Scenes/ui/ui.tscn" id="6_780lt"]
-[ext_resource type="PackedScene" uid="uid://b0gajcrykld8b" path="res://Scenes/ui/time.tscn" id="8_r0e2h"]
 [ext_resource type="AudioStream" uid="uid://be8tg0kwtr7g0" path="res://sounds/Megaman X5 - Rangda Bangda II - NeoSigma18 (youtube).mp3" id="9_8gwo8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
@@ -56,12 +55,10 @@ position = Vector2(562, 235)
 [node name="CustomBossHUD" parent="." instance=ExtResource("5_b8jcs")]
 
 [node name="Control" parent="." instance=ExtResource("6_780lt")]
-offset_left = 45.0
-offset_top = 54.0
-offset_right = 45.0
-offset_bottom = 54.0
-
-[node name="Timer" parent="." instance=ExtResource("8_r0e2h")]
+offset_left = 31.0
+offset_top = 95.0
+offset_right = 31.0
+offset_bottom = 95.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_8gwo8")

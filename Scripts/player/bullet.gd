@@ -1,8 +1,8 @@
 # ----- SCRIPT DO BULLET (bullet.gd) -----
 extends Area2D
 
-@export var speed = 600.0
-@export var damage: float = 5.0
+@export var speed = 450.0
+@export var damage: float = 50.0
 
 # Remova o ' = Vector2.RIGHT'. A direção será definida pelo Player.
 var direction: Vector2 

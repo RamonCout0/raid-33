@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm01g7jnvfpsc"]
+
+[ext_resource type="Texture2D" uid="uid://bkba7hj8md8fg" path="res://assets/mapas/eden.png" id="1_5euuq"]
+[ext_resource type="PackedScene" uid="uid://cysj2py35yvas" path="res://Scenes/player/player.tscn" id="2_5euuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqwy1"]
+size = Vector2(640.5, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcp6g"]
+size = Vector2(20, 363)
+
+[node name="Teste2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(319.75, 329)
+shape = SubResource("RectangleShape2D_pqwy1")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(320, 180)
+texture = ExtResource("1_5euuq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11, 179)
+shape = SubResource("RectangleShape2D_gcp6g")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(649, 180.5)
+shape = SubResource("RectangleShape2D_gcp6g")
+
+[node name="player" parent="." instance=ExtResource("2_5euuq")]
+position = Vector2(243, 228)
